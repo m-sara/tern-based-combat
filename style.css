@@ -62,7 +62,9 @@ p {
 }
 
 #heroimg {
-
+  width: 200px;
+  height: 200px;
+  border: 1px orange solid;
 }
 
 #herohp {
@@ -83,7 +85,9 @@ p {
 }
 
 #enemyimg {
-
+  width: 200px;
+  height: 200px;
+  border: 1px orange solid;
 }
 
 #enemyhp {
