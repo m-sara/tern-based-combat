@@ -5,7 +5,7 @@
 
       <title>Tern-Based Combat</title>
       <link rel="stylesheet" type="text/css" href="style.css" />
-
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
     </head>
 
     <body>
@@ -16,29 +16,45 @@
 
         <div id="nav">
 
-          <p id="flavortext"></p>
+          <!-- <p id="flavortext"></p> -->
+
+            <ul>
+              <li><a href="pages/stats.html">Your Stats</a></li>
+              <li><a href="pages/about.html">About Team Tern-Style</a></li>
+            </ul>
 
         </div>
 
       </header>
 
       <main>
-        <div id="flavor"></div>
+        <div id="flavor">
+          <p>This will be the flavor text area.</p>
+        </div>
 
         <div id="combat">
 
           <div id="hero">
 
             <img id="heroimg" />
-            <div id="hereohp"></div>
-            <div id="herobuttons"></div>
+            <div id="hereohp">HERO IMAGE</div>
+            <div id="herobuttons">
+              <p>Hero HP</p>
+              <ul class="herobuttonsgame">
+                <li>ATTACK</li>
+                <li>HEAL</li>
+              </ul>
+            </div>
 
           </div>
 
           <div id="enemy">
 
-            <img id="enemyimg" />
-            <div id="enemyhp"></div>
+            <!-- <img id="enemyimg" /> -->
+            ENEMY IMAGE
+            <div id="enemyhp">
+              <p>Enemy HP</p>
+            </div>
 
           </div>
 

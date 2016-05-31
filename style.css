@@ -1,25 +1,30 @@
 * {
-
+  display: flex;
+  flex-direction: column;
+  border: 1px solid darkgray;
 }
 
 body {
-
+  display: flex;
+  width: 70%;
+  align-self: center;
 }
 
 header {
-
+  display: flex;
+  width: 100%;
 }
 
 main {
-
+  display: flex;
+  justify-content: center;
 }
 
 footer {
-
 }
 
 h1 {
-
+  display: flex;
 }
 
 h2 {
@@ -35,7 +40,7 @@ p {
 }
 
 #nav {
-
+  align-self: flex-end;
 }
 
 #flavortext {
@@ -47,11 +52,13 @@ p {
 }
 
 #combat {
-
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 #hero {
-
+  width: 45%;
+  border: 2px solid red;
 }
 
 #heroimg {
@@ -66,8 +73,13 @@ p {
 
 }
 
-#enemy {
+.herobuttonsgame {
+  flex-direction: row;
+}
 
+#enemy {
+  width: 45%;
+  border: 2px solid red;
 }
 
 #enemyimg {
@@ -79,7 +91,6 @@ p {
 }
 
 #footertext {
-
 }
 
 #herostats {
@@ -103,11 +114,10 @@ p {
 }
 
 .enemyindex {
-
 }
 
 .enemycontainer {
-
+  width: 45%;
 }
 
 .enemyindeximg {
@@ -119,11 +129,11 @@ p {
 }
 
 .teamcontainer {
-
+  width: 45%;
 }
 
 .teammemberimg {
-  
+
 }
 
 .teammembertext {
