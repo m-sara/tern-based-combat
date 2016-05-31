@@ -1,6 +1,6 @@
 // COMBAT AND INTERACTIVITY APP
 
-var users = [];
+// var users = [];
 var enemies = [];
 var level = 0;
 var heroTurn = true;
@@ -18,14 +18,14 @@ var enemyHP = document.getElementById('enemyhp');
 var heroButtonsGame = document.getElementById('herobuttonsgame');
 
 function Hero() {
-  var userName = prompt('Tell us your name, Hero!');
-  this.name = userName;
+  // var userName = prompt('Tell us your name, Hero!');
+  // this.name = userName;
   this.swings = 0;
   this.hits = 0;
   this.misses = 0;
   this.alive = true;
   this.hitPoints = 100;
-  users.push(this);
+  // users.push(this);
 }
 
 function Enemy(name, hitPoints) {
@@ -61,7 +61,6 @@ function dispHero() {
 
 function dispEnemy() {
   testText2.textContent = 'This Displays the Enemy';
-  // display HP
   enemyHP.textContent = 'HP: 25';
 }
 
@@ -79,12 +78,12 @@ function turnSwap() {
 }
 
 function randomHit() {
-  var hit = false;
+  var hitStatus = false;
   var hitChance = Math.random();
   if (hitChance >= .6) {
-    hit = true;
+    hitStatus = true;
   }
-  if (hit === false) {
+  if (hitStatus === false) {
     miss();
   } else {
     hit();
@@ -95,17 +94,24 @@ function randomHit() {
 function hit() {
   if (heroTurn) {
     testText2.textContent = 'HIT!';
+    // here is where we change enemy hp
   } else {
-    textText.textContent = 'HIT!';
+    testText.textContent = 'HIT!';
+    // here is where we change hero hp
   }
 }
 
 function miss() {
   if (heroTurn) {
-    textText2.textContent = 'miss';
+    testText2.textContent = 'miss';
   } else {
-    textText.textContent = 'miss';
+    testText.textContent = 'miss';
   }
+}
+
+function heal() {
+  testHero.hitPoints += 5;
+  heroHP.textContent = testHero.hitPoints;
 }
 
 titleScreen();
@@ -119,5 +125,6 @@ titleScreen();
 // }
 
 // var tern1 = new Enemy('Balthasar', 50);
+var testHero = new Hero();
 flavor.style.visibility = 'hidden';
 heroButtonsGame.style.visibility = 'hidden';
