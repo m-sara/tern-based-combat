@@ -11,7 +11,6 @@ var beginGame = document.getElementById('begingame');
 var testText = document.getElementById('testtext');
 var testText2 = document.getElementById('testtext2');
 
-
 function Hero() {
   var userName = prompt('Tell us your name, Hero!');
   this.name = userName;
@@ -58,8 +57,6 @@ function combatRound() {
   dispHero();
   dispEnemy();
 }
-
-
 
 titleScreen();
 
