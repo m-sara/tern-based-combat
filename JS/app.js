@@ -11,6 +11,11 @@ var beginGame = document.getElementById('begingame');
 var testText = document.getElementById('testtext');
 var testText2 = document.getElementById('testtext2');
 
+var heroHP = document.getElementById('herohp');
+var enemyHP = document.getElementById('enemyhp');
+
+var heroButtonsGame = document.getElementById('herobuttonsgame');
+
 function Hero() {
   var userName = prompt('Tell us your name, Hero!');
   this.name = userName;
@@ -47,10 +52,16 @@ function beginGame() {
 
 function dispHero() {
   testText.textContent = 'This Displays the Hero';
+  // display HP
+  heroHP.textContent = 'HP: 100';
+  // turn on buttons
+  heroButtonsGame.style.visibility = 'visible';
 }
 
 function dispEnemy() {
   testText2.textContent = 'This Displays the Enemy';
+  // display HP
+  enemyHP.textContent = 'HP: 25';
 }
 
 function combatRound() {
@@ -70,3 +81,4 @@ titleScreen();
 
 // var tern1 = new Enemy('Balthasar', 50);
 flavor.style.visibility = 'hidden';
+heroButtonsGame.style.visibility = 'hidden';
