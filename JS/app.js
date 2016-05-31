@@ -3,6 +3,7 @@
 var users = [];
 var enemies = [];
 var level = 0;
+var heroTurn = true;
 var story = document.getElementById('story');
 var flavor = document.getElementById('flavor');
 var startButton = document.getElementById('startbutton');
@@ -67,6 +68,44 @@ function dispEnemy() {
 function combatRound() {
   dispHero();
   dispEnemy();
+}
+
+function turnSwap() {
+  if (heroTurn === true) {
+    heroTurn = false;
+  } else {
+    heroTurn = true;
+  }
+}
+
+function randomHit() {
+  var hit = false;
+  var hitChance = Math.random();
+  if (hitChance >= .6) {
+    hit = true;
+  }
+  if (hit === false) {
+    miss();
+  } else {
+    hit();
+  }
+  turnSwap();
+}
+
+function hit() {
+  if (heroTurn) {
+    testText2.textContent = 'HIT!';
+  } else {
+    textText.textContent = 'HIT!';
+  }
+}
+
+function miss() {
+  if (heroTurn) {
+    textText2.textContent = 'miss';
+  } else {
+    textText.textContent = 'miss';
+  }
 }
 
 titleScreen();
