@@ -1,6 +1,6 @@
 // COMBAT AND INTERACTIVITY APP
 
-// var users = [];
+var users = [];
 var enemies = [];
 var level = 0;
 var heroTurn = true;
@@ -20,6 +20,10 @@ var enemyHP = document.getElementById('enemyhp');
 
 var heroButtonsGame = document.getElementById('herobuttonsgame');
 
+// this puts our hero into LS
+var heroString = JSON.stringify(testHero);
+localStorage.setItem('heroData', heroString);
+
 function Hero() {
   // var userName = prompt('Tell us your name, Hero!');
   // this.name = userName;
@@ -32,7 +36,7 @@ function Hero() {
   this.isHit = 'isHit image path';
   this.win = 'win image path';
   this.dead = 'dead image path';
-  // users.push(this);
+  users.push(this);
 }
 
 Hero.prototype.calcSwings = function() {
@@ -124,7 +128,7 @@ function lifeCheck() {
 
 function hit() {
   if (heroTurn) {
-    enemies[level].hitPoints -= 20;
+    enemies[level].hitPoints -= 200;
     testText2.textContent = 'HIT!';
     lifeCheck();
   } else {
