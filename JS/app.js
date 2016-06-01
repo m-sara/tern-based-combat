@@ -35,6 +35,11 @@ function Hero() {
   // users.push(this);
 }
 
+Hero.prototype.calcSwings = function() {
+  var totalSwings = (this.hits + this.misses);
+  this.swings = totalSwings;
+};
+
 function Enemy(name, hp) {
   this.name = name;
   this.hitPoints = hp;
@@ -96,9 +101,11 @@ function randomHit() {
   var hitChance = Math.random();
   if (hitChance >= .45) {
     hitStatus = true;
+    testHero.hits += 1;
   }
   if (hitStatus === false) {
     miss();
+    testHero.misses += 1;
   } else {
     hit();
   }
@@ -144,12 +151,14 @@ function gameOver() {
   story.style.visibility = 'visible';
   story.textContent = 'GAME OVER MAN!';
   heroButtonsGame.style.visibility = 'hidden';
+  testHero.calcSwings();
 }
 
 function victory() {
   story.style.visibility = 'visible';
   story.textContent = 'You\'re out of Terns!';
   heroButtonsGame.style.visibility = 'hidden';
+  testHero.calcSwings();
 }
 
 function miss() {
@@ -163,10 +172,14 @@ function miss() {
 function heroHeal() {
   if(testHero.hitPoints === 100){
     testHero.hitPoints += 0;
+    turnSwap();
+    randomHit();
   } else {
-    testHero.hitPoints += 5;
+    testHero.hitPoints += 10;
     heroHP.textContent = testHero.hitPoints;
     dispHero();
+    turnSwap();
+    randomHit();
   }
 }
 
