@@ -1,9 +1,12 @@
 var heroStats = ['Swings', 'Hits', 'Misses', 'Charisma', 'Volatility'];
-var testHero = [60, 30, 30, 7, 45];
+// var testHero = [60, 30, 30, 7, 45];
 
-// if (localStorage) {
-//   testHero = JSON.parse(localStorage.getItem('heroData'));
-// }
+var testHero = [];
+
+if (localStorage) {
+  testHero = JSON.parse(localStorage.getItem('heroData'));
+}
+console.log('hero data is: ' + testHero);
 
 var heroData = {
   labels : heroStats,
