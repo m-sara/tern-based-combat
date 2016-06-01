@@ -11,6 +11,7 @@ var beginGame = document.getElementById('begingame');
 
 var testText = document.getElementById('testtext');
 var testText2 = document.getElementById('testtext2');
+var testText3 = document.getElementById('testtext3');
 
 var heroHP = document.getElementById('herohp');
 var enemyHP = document.getElementById('enemyhp');
@@ -23,15 +24,23 @@ function Hero() {
   this.swings = 0;
   this.hits = 0;
   this.misses = 0;
-  this.alive = true;
   this.hitPoints = 100;
+  this.idle = 'idle image path';
+  this.swing = 'swing image path';
+  this.isHit = 'isHit image path';
+  this.win = 'win image path';
+  this.dead = 'dead image path';
   // users.push(this);
 }
 
-function Enemy(name, hitPoints) {
+function Enemy(name, hp) {
   this.name = name;
-  this.hitPoints = hitPoints;
-  this.alive = true;
+  this.hitPoints = hp;
+  this.idle = 'idle image path';
+  this.swing = 'swing image path';
+  this.isHit = 'isHit image path';
+  this.win = 'win image path';
+  this.dead = 'dead image path';
   enemies.push(this);
 }
 
@@ -54,14 +63,15 @@ function beginGame() {
 function dispHero() {
   testText.textContent = 'This Displays the Hero';
   // display HP
-  heroHP.textContent = 'HP: 100';
+  heroHP.textContent = testHero.hitPoints;
   // turn on buttons
   heroButtonsGame.style.visibility = 'visible';
 }
 
-function dispEnemy() {
+function dispEnemy(baddie) {
   testText2.textContent = 'This Displays the Enemy';
-  enemyHP.textContent = 'HP: 25';
+  testText3.textContent = enemies[level].name;
+  enemyHP.textContent = enemies[level].hitPoints;
 }
 
 function combatRound() {
@@ -95,10 +105,28 @@ function hit() {
   if (heroTurn) {
     testText2.textContent = 'HIT!';
     // here is where we change enemy hp
+    tern1.hitPoints -= 20;
   } else {
     testText.textContent = 'HIT!';
     // here is where we change hero hp
+    testHero.hitPoints -= 10;
   }
+  if (testHero.hitPoints <= 0) {
+    gameOver();
+  } else if (tern1.hitpoints <= 0 ) {
+    newRound();
+  }
+}
+
+function newRound() {
+  level += 1;
+  testHero.hitPoints = 100;
+  dispEnemy(enemies[level]);
+}
+
+function gameOver() {
+  story.style.visibility = 'visible';
+  story.textContent = 'GAME OVER MAN!';
 }
 
 function miss() {
@@ -124,7 +152,11 @@ titleScreen();
 //   }
 // }
 
-// var tern1 = new Enemy('Balthasar', 50);
+var tern1 = new Enemy('Raoul', 50);
+var tern2 = new Enemy('Vernon', 75);
+var tern3 = new Enemy('Khaleesi', 100);
+var tern4 = new Enemy('Vicious', 125);
+var tern5 = new Enemy('Terninator', 200);
 var testHero = new Hero();
 flavor.style.visibility = 'hidden';
 heroButtonsGame.style.visibility = 'hidden';
