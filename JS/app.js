@@ -2,6 +2,7 @@
 
 var users = [];
 var enemies = [];
+var heroLS = []; // used for local storage
 var level = 0;
 var heroTurn = true;
 var story = document.getElementById('story');
@@ -19,10 +20,6 @@ var heroHP = document.getElementById('herohp');
 var enemyHP = document.getElementById('enemyhp');
 
 var heroButtonsGame = document.getElementById('herobuttonsgame');
-
-// this puts our hero into LS
-var heroString = JSON.stringify(testHero);
-localStorage.setItem('heroData', heroString);
 
 function Hero() {
   // var userName = prompt('Tell us your name, Hero!');
@@ -128,7 +125,7 @@ function lifeCheck() {
 
 function hit() {
   if (heroTurn) {
-    enemies[level].hitPoints -= 200;
+    enemies[level].hitPoints -= 20;
     testText2.textContent = 'HIT!';
     lifeCheck();
   } else {
@@ -156,6 +153,7 @@ function gameOver() {
   story.textContent = 'GAME OVER MAN!';
   heroButtonsGame.style.visibility = 'hidden';
   testHero.calcSwings();
+  heroToLS();
 }
 
 function victory() {
@@ -163,6 +161,7 @@ function victory() {
   story.textContent = 'You\'re out of Terns!';
   heroButtonsGame.style.visibility = 'hidden';
   testHero.calcSwings();
+  heroToLS();
 }
 
 function miss() {
@@ -210,6 +209,14 @@ function handleAttack() {
 
 function handleHeal() {
   heroHeal();
+}
+
+// var ourStats = [];
+
+function heroToLS() {
+  ourStats = [testHero.swings, testHero.hits, testHero.misses, 11, 45];
+  // heroLS.push(ourStats);
+  localStorage.setItem('heroData', JSON.stringify(ourStats));
 }
 
 var tern1 = new Enemy('Raoul', 50);
