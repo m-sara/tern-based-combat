@@ -17,3 +17,4 @@ Wednesday, June 1
 - 11:30am JS4: Wired all event handlers. Fixed heal to not do anything at full HP. JP drove, Jed, George, Megan navigated.
 - 1:30pm CSS4: Megan centered on home page.  Added rows to stats and about pages.
 - 1:30pm JS5: Jed enabled life check to initiate new round with new enemy and refresh the hero.  JP and George navigated.
+- 2:15pm JS6: Jed put in end game protocols.  George navigated.

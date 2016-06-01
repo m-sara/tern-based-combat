@@ -94,7 +94,7 @@ function turnSwap() {
 function randomHit() {
   var hitStatus = false;
   var hitChance = Math.random();
-  if (hitChance >= .6) {
+  if (hitChance >= .45) {
     hitStatus = true;
   }
   if (hitStatus === false) {
@@ -105,15 +105,16 @@ function randomHit() {
   turnSwap();
 }
 //
-// (testHero.hitPoints <= 0) {
-//   gameOver();
 function lifeCheck() {
-  if (enemies[level].hitPoints < 1 ) {
+  if (testHero.hitPoints <= 0) {
+    gameOver();
+  } else if (enemies[level].hitPoints < 1 ) {
     newRound();
   } else {
     dispEnemy();
   }
 }
+
 function hit() {
   if (heroTurn) {
     enemies[level].hitPoints -= 20;
@@ -123,20 +124,32 @@ function hit() {
     testText.textContent = 'HIT!';
     // here is where we change hero hp
     testHero.hitPoints -= 10;
+    lifeCheck();
     dispHero();
   }
 }
 
 function newRound() {
   level += 1;
-  testHero.hitPoints = 100;
-  dispHero();
-  dispEnemy(enemies[level]);
+  if (level >= 5) {
+    victory();
+  } else {
+    testHero.hitPoints = 100;
+    dispHero();
+    dispEnemy(enemies[level]);
+  }
 }
 
 function gameOver() {
   story.style.visibility = 'visible';
   story.textContent = 'GAME OVER MAN!';
+  heroButtonsGame.style.visibility = 'hidden';
+}
+
+function victory() {
+  story.style.visibility = 'visible';
+  story.textContent = 'You\'re out of Terns!';
+  heroButtonsGame.style.visibility = 'hidden';
 }
 
 function miss() {
@@ -191,6 +204,7 @@ var testHero = new Hero();
 
 flavor.style.visibility = 'hidden';
 heroButtonsGame.style.visibility = 'hidden';
+
 startButton.addEventListener('click', handleStart);
 beginGame.addEventListener('click', handleBegin);
 attack.addEventListener('click', handleAttack);
