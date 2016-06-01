@@ -10,3 +10,4 @@ Tuesday, May 31
 - 11:30am - LP1 LP2 Megan created buttons for hero attack/heal
 - 2:00pm JS1: George drove while JP and Megan navigated. Began JS functionality for beginning of the game. Additions to app.js includes variables declared for DOM manipulation, functions for hero and enemy creation, and text display proof of concept. Also adds start and begin game buttons to index.html. Id'd <p> in flavor div to produce story and player instruction text.
 - 3:30pm JS2: Megan drove, George and JP navigated. Added turn swap, hit randomizer, hit/miss effects w/ text based proof of concept, also heal w/ text based proof of concept.
+- 4:50pm JS3: George drove while Megan and JP navigated. Fleshed out enemy and hero creator functions, added new round function to bring in a new enemy from enemies array when the last one is defeated, also added game over function for life check. Tested and debugged.
