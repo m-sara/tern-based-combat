@@ -71,6 +71,7 @@ function dispHero() {
 }
 
 function dispEnemy(baddie) {
+  console.log(enemies[level]);
   testText2.textContent = 'This Displays the Enemy';
   testText3.textContent = enemies[level].name;
   enemyHP.textContent = enemies[level].hitPoints;
@@ -103,29 +104,33 @@ function randomHit() {
   }
   turnSwap();
 }
-
+//
+// (testHero.hitPoints <= 0) {
+//   gameOver();
+function lifeCheck() {
+  if (enemies[level].hitPoints < 1 ) {
+    newRound();
+  } else {
+    dispEnemy();
+  }
+}
 function hit() {
   if (heroTurn) {
+    enemies[level].hitPoints -= 20;
     testText2.textContent = 'HIT!';
-    // here is where we change enemy hp
-    tern1.hitPoints -= 20;
-    dispEnemy();
+    lifeCheck();
   } else {
     testText.textContent = 'HIT!';
     // here is where we change hero hp
     testHero.hitPoints -= 10;
     dispHero();
   }
-  if (testHero.hitPoints <= 0) {
-    gameOver();
-  } else if (tern1.hitpoints <= 0 ) {
-    newRound();
-  }
 }
 
 function newRound() {
   level += 1;
   testHero.hitPoints = 100;
+  dispHero();
   dispEnemy(enemies[level]);
 }
 
