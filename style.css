@@ -1,6 +1,4 @@
 * {
-  /*display: flex;
-  flex-direction: column;*/
   border: 1px solid darkgray;
 }
 
@@ -8,8 +6,8 @@ body {
   display: flex;
   flex-direction: column;
   width: 70%;
-  /*align-self: center;*/
   margin: 0px auto;
+  min-width: 400px;
 }
 
 header {
@@ -18,10 +16,6 @@ header {
 }
 
 main {
-  /*display: flex;*/
-  /*justify-content: center;*/
-  /*flex-direction: column;*/
-  /*flex-direction: row;*/
 }
 
 footer {
@@ -29,8 +23,8 @@ footer {
 }
 
 h1 {
-  /*display: flex;*/
   margin: 0px auto;
+  align-self: flex-end;
 }
 
 h2 {
@@ -59,8 +53,6 @@ p {
 }
 
 #combat {
-  /*flex-direction: row;*/
-  /*justify-content: space-around;*/
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -69,13 +61,16 @@ p {
 #hero {
   width: 45%;
   border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
 }
 
 #heroimg {
   width: 200px;
   height: 200px;
   border: 1px orange solid;
-  justify-content: center;
+  align-self: center;
 }
 
 #herohp {
@@ -93,12 +88,16 @@ p {
 #enemy {
   width: 45%;
   border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
 }
 
 #enemyimg {
   width: 200px;
   height: 200px;
   border: 1px orange solid;
+  align-self: center;
 }
 
 #enemyhp {
@@ -157,4 +156,14 @@ p {
 
 .teammembertext {
 
+}
+
+.teamrow {
+  display: flex;
+  flex-direction: row;
+}
+
+.enemyrow {
+  display: flex;
+  flex-direction: row;
 }
