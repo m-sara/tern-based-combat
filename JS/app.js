@@ -211,15 +211,13 @@ function handleHeal() {
   heroHeal();
 }
 
-function heroToLS() {
-  var ourStats = [testHero.swings, testHero.hits, testHero.misses, 11, 45];
-  heroLS.push(ourStats);
-  localStorage.setItem('heroData', JSON.stringify(heroLS));
-}
+// var ourStats = [];
 
-// this puts our hero into LS
-var heroString = JSON.stringify(testHero);
-localStorage.setItem('heroData', heroString);
+function heroToLS() {
+  ourStats = [testHero.swings, testHero.hits, testHero.misses, 11, 45];
+  // heroLS.push(ourStats);
+  localStorage.setItem('heroData', JSON.stringify(ourStats));
+}
 
 var tern1 = new Enemy('Raoul', 50);
 var tern2 = new Enemy('Vernon', 75);
