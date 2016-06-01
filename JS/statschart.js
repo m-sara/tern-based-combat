@@ -1,5 +1,5 @@
-var heroStats = ['Swings', 'Hits', 'Misses'];
-var testHero = {swings: 11, hits: 7, misses: 4};
+var heroStats = ['Swings', 'Hits', 'Misses', 'Charisma', 'Volatility'];
+var testHero = [60, 30, 30, 7, 45];
 
 // if (localStorage) {
 //   testHero = JSON.parse(localStorage.getItem('heroData'));

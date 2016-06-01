@@ -19,3 +19,4 @@ Wednesday, June 1
 - 1:30pm JS5: Jed enabled life check to initiate new round with new enemy and refresh the hero.  JP and George navigated.
 - 2:15pm JS6: Jed put in end game protocols.  George navigated.
 - 2:52pm JS7: Jed put in hits/misses/swings tracker.  Turn swap for heal.  George navigated.
+- 3:50pm JS8: Created statschart.js file, created drawChart function radar chart for stats page. Megan drove, George, Jed and JP navigated.
