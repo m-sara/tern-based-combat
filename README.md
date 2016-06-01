@@ -18,3 +18,4 @@ Wednesday, June 1
 - 1:30pm CSS4: Megan centered on home page.  Added rows to stats and about pages.
 - 1:30pm JS5: Jed enabled life check to initiate new round with new enemy and refresh the hero.  JP and George navigated.
 - 2:15pm JS6: Jed put in end game protocols.  George navigated.
+- 2:52pm JS7: Jed put in hits/misses/swings tracker.  Turn swap for heal.  George navigated.
