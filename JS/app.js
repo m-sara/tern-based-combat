@@ -244,3 +244,31 @@ startButton.addEventListener('click', handleStart);
 beginGame.addEventListener('click', handleBegin);
 attack.addEventListener('click', handleAttack);
 heal.addEventListener('click', handleHeal);
+
+// stab css animations below
+var heroStab = document.getElementById('heroimg');
+var enemyStab = document.getElementById('enemyimg');
+
+function heroAtkStab() {
+  heroStab.className = 'herostabby';
+  setTimeout(stopHeroStab, 600);
+}
+
+function enemyAtkStab() {
+  enemyStab.className = 'enemystabby';
+  setTimeout(stopEnemyStab, 600);
+}
+
+function stopHeroStab() {
+  heroStab.className = 'blob';
+}
+
+function stopEnemyStab() {
+  enemyStab.className = 'blob';
+}
+
+var theLink = document.getElementById('hero-link');
+theLink.addEventListener('click', heroAtkStab);
+
+var theLink = document.getElementById('enemy-link');
+theLink.addEventListener('click', enemyAtkStab);

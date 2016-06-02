@@ -189,3 +189,38 @@ p {
   width: 200px;
   align-self: center;
 }
+
+
+/* stabbing animations */
+
+.herostabby {
+  animation-duration: 0.2s;
+  animation-name: herostabbing;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+}
+@keyframes herostabbing {
+  from {
+    margin-left: 0%;
+  }
+
+  to {
+    margin-left: 10%;
+  }
+}
+
+.enemystabby {
+  animation-duration: 0.2s;
+  animation-name: enemystabbing;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+}
+@keyframes enemystabbing {
+  from {
+    margin-left: 0%;
+  }
+
+  to {
+    margin-left: -10%;
+  }
+}

@@ -28,4 +28,6 @@ Thursday, June 2
 - 10:45am JS10: Jed added all flavor content for enemies and beginning story.  Cleaned up JS page - corpse code, etc. and general organization.
 - 11:00am CSS6: Megan add main page background image
 - 11:55am JS11: George and Jed made some tweaks to content and attempted (failed) to set up timers.
+- 1:00 JS12: George created time delay in turn swap function to activate enemy attack
 - 2:10pm JS13: Jed with help from Sam created shake animation for enemy and hero images on hit. Also created color scheme for other pages.  Added shake.css to tie in animations.
+- 2:25pm JS13: Megan added stab CSS animations in style.css and app.js.
