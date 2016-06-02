@@ -21,3 +21,7 @@ Wednesday, June 1
 - 2:52pm JS7: Jed put in hits/misses/swings tracker.  Turn swap for heal.  George navigated.
 - 3:50pm JS8: Created statschart.js file, created drawChart function radar chart for stats page. Megan drove, George, Jed and JP navigated.
 - 4:45pm JS9: Megan created local storage, George, Jed, JP and Nadia helped debug a nested array situation.
+
+Thursday, June 2
+- 9:00am CSS4: Megan centered text beneath images on main page, added padding to display on about team and stats page
+- 10:00am AP2: Megan added Tern images to About Team page
