@@ -6,6 +6,7 @@ var enemies = [];
 var heroLS = [];
 var level = 0;
 var heroTurn = true;
+var heroImg = document.getElementById('heroimg');
 var story = document.getElementById('story');
 var flavor = document.getElementById('flavor');
 var startButton = document.getElementById('startbutton');
@@ -27,11 +28,9 @@ function Hero() {
   this.hits = 0;
   this.misses = 0;
   this.hitPoints = 100;
-  this.idle = 'idle image path';
-  this.swing = 'swing image path';
-  this.isHit = 'isHit image path';
-  this.win = 'win image path';
-  this.dead = 'dead image path';
+  this.idle = 'images/hero_idle.png';
+  this.swing = 'images/hero_attack.png';
+  this.dead = 'images/hero_dead.png';
   users.push(this);
 }
 
@@ -46,19 +45,17 @@ function Enemy(name, hp, enemyFlavor) {
   this.name = name;
   this.hitPoints = hp;
   this.enemyFlavor = enemyFlavor;
-  this.idle = 'idle image path';
-  this.swing = 'swing image path';
-  this.isHit = 'isHit image path';
-  this.win = 'win image path';
-  this.dead = 'dead image path';
+  this.idle = 'images/' + this.name + '_idle.png';
+  this.swing = 'images/' + this.name + '_attack.png' ;
+  this.dead = 'images/' + this.name + '_dead.png';
   enemies.push(this);
 }
 
-var tern1 = new Enemy('Tern Fonk', 50, 'Oh jeeze Tern Fonk is here!  He is just a low level thug, but the worst kind of low level thug.  Careful at every Tern.');
-var tern2 = new Enemy('Tina Terner', 75, 'What?!  How did Tina Terner get here?  This is not good.  They\'re swarming (flocking? I don’t know how this works…).');
-var tern3 = new Enemy('Ternie Sanders', 100, 'Well done!  This isn\'t so bad afte... OH NO LOOK OUT IT\'s Ternie Sanders!');
-var tern4 = new Enemy('The Atterney at Law', 125, 'So the last time I saw Ternie Sanders, The Atterney at Law  was NOT far behind... Yeah ok.  I am out of here.  Yer on your own, kid.');
-var tern5 = new Enemy('The Terninator', 200, '*The Terninator* Your clothes, give them to me.  Now.');
+var tern1 = new Enemy('Tern Fonk', 50, 'Oh jeeze Tern Fonk is here! He is just a low level thug, but the worst kind of low level thug. Careful at every Tern.');
+var tern2 = new Enemy('Tina Terner', 75, 'What?! How did Tina Terner get here? This is not good. They\'re swarming (flocking? I don\'t know how this works...).');
+var tern3 = new Enemy('Ternie Sanders', 100, 'Well done! This isn\'t so bad afte... OH NO LOOK OUT IT\'s Ternie Sanders!');
+var tern4 = new Enemy('The Atterney at Law', 125, 'So the last time I saw Ternie Sanders, The Atterney at Law was NOT far behind... Yeah ok. I am out of here. Yer on your own, kid.');
+var tern5 = new Enemy('The Terninator', 200, '*The Terninator* Your clothes, give them to me. Now.');
 
 // Functions for Landing Page
 
@@ -73,11 +70,21 @@ function begin() {
   flavor.style.visibility = 'visible';
   beginGame.style.visibility = 'visible';
   startButton.style.visibility = 'hidden';
-  story.textContent = '*Narrator* They\'re taking over.  All of the terns.  They\'re everywhere.  It\'s up to you to take them down, one at a time. Hack, slash and heal your way to their leader.  Do you have what it takes to stop all the terns?';
+  story.textContent = '*Narrator* They\'re taking over. All of the terns. They\'re everywhere. It\'s up to you to take them down, one at a time. Hack, slash and heal your way to their leader. Do you have what it takes to stop all the terns?';
   dispHero();
 }
 
+function heroDead() {
+  heroImg.src = testHero.dead;
+  heroHP.textContent = 0;
+}
+
+function heroSwing() {
+  heroImg.src = testHero.swing;
+}
+
 function dispHero() {
+  heroImg.src = testHero.idle;
   heroHP.textContent = testHero.hitPoints;
 }
 
@@ -94,14 +101,12 @@ function turnSwap() {
     heroTurn = false;
     setTimeout(enemyAtkStab, 3000);
     setTimeout(randomHit, 3500);
-
   } else {
     heroTurn = true;
   }
 }
 
 function randomHit() {
-  console.log('random hit happened');
   var hitStatus = false;
   var hitChance = Math.random();
   if (hitChance >= .45) {
@@ -252,8 +257,10 @@ function handleBegin(){
 }
 
 function handleAttack() {
+  heroSwing();
   heroAtkStab();
   randomHit();
+  setTimeout(dispHero, 2000);
   // this calls stab CSS animation
 }
 

@@ -123,6 +123,12 @@ p {
 }
 
 .gamepage-main {
+  background-image: url('images/stormy_beach_2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  /*background-size: contain;*/
+  background-size: cover;
+  /*background-color: #333333;*/
   margin: 0px;
   padding: 0px;
   /*max-height: 630px;*/
