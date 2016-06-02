@@ -34,3 +34,4 @@ Thursday, June 2
 - 3:00pm JS15: Put calls for stab animations into JS. Megan drove, George and Jed navigated.
 - 3:45pm SP1: Jed added enemy info on stats pages, Google fonts link on all pages, banner image asset.
 - 3:45pm CSS7: Megan added Google fonts, background image flavor text area
+- 3:50pm JS16: George worked on timing for fight animations
