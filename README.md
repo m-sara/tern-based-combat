@@ -27,3 +27,4 @@ Thursday, June 2
 - 10:00am AP2: Megan added Tern images to About Team page
 - 10:45am JS10: Jed added all flavor content for enemies and beginning story.  Cleaned up JS page - corpse code, etc. and general organization.
 - 11:00am CSS6: Megan add main page background image
+- 11:55am JS11: George and Jed made some tweaks to content and attempted (failed) to set up timers.
