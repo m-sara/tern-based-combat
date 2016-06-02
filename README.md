@@ -25,3 +25,4 @@ Wednesday, June 1
 Thursday, June 2
 - 9:00am CSS4: Megan centered text beneath images on main page, added padding to display on about team and stats page
 - 10:00am AP2: Megan added Tern images to About Team page
+- 11:00am CSS6: Megan add main page background image
