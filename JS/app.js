@@ -55,8 +55,8 @@ function Enemy(name, hp, enemyFlavor) {
 }
 
 var tern1 = new Enemy('Tern Fonk', 50, 'Oh jeeze Tern Fonk is here!  He is just a low level thug, but the worst kind of low level thug.  Careful at every Tern.');
-var tern2 = new Enemy('Tina Terner', 75, 'What?!  How did Tina Terner get here?  This is not good.  They’re swarming (flocking? I don’t know how this works…).');
-var tern3 = new Enemy('Ternie Sanders', 100, 'Well done!  This isn\'t so bad afte… OH NO LOOK OUT IT\'s Ternie Sanders!');
+var tern2 = new Enemy('Tina Terner', 75, 'What?!  How did Tina Terner get here?  This is not good.  They\'re swarming (flocking? I don’t know how this works…).');
+var tern3 = new Enemy('Ternie Sanders', 100, 'Well done!  This isn\'t so bad afte... OH NO LOOK OUT IT\'s Ternie Sanders!');
 var tern4 = new Enemy('The Atterney at Law', 125, 'So the last time I saw Ternie Sanders, The Atterney at Law  was NOT far behind... Yeah ok.  I am out of here.  Yer on your own, kid.');
 var tern5 = new Enemy('The Terninator', 200, '*The Terninator* Your clothes, give them to me.  Now.');
 
@@ -92,7 +92,9 @@ function turnSwap() {
   console.log('turnswap was called');
   if (heroTurn === true) {
     heroTurn = false;
-    setTimeout(randomHit, 3000);
+    setTimeout(enemyAtkStab, 3000);
+    setTimeout(randomHit, 3500);
+
   } else {
     heroTurn = true;
   }
@@ -210,41 +212,6 @@ function stopEnemyShake() {
   enemyShake.className = '';
 }
 
-// Stats for Chart
-
-function heroToLS() {
-  ourStats = [testHero.swings, testHero.hits, testHero.misses, 11, 45];
-  localStorage.setItem('heroData', JSON.stringify(ourStats));
-}
-
-// Event Handlers
-
-function handleStart(){
-  begin();
-}
-
-function handleBegin(){
-  dispEnemy();
-}
-
-function handleAttack() {
-  randomHit();
-}
-
-function handleHeal() {
-  heroHeal();
-}
-
-flavor.style.visibility = 'hidden';
-heroButtonsGame.style.visibility = 'hidden';
-
-// Event Listeners
-
-startButton.addEventListener('click', handleStart);
-beginGame.addEventListener('click', handleBegin);
-attack.addEventListener('click', handleAttack);
-heal.addEventListener('click', handleHeal);
-
 // stab css animations below
 var heroStab = document.getElementById('heroimg');
 var enemyStab = document.getElementById('enemyimg');
@@ -267,8 +234,39 @@ function stopEnemyStab() {
   enemyStab.className = 'blob';
 }
 
-var theLink = document.getElementById('hero-link');
-theLink.addEventListener('click', heroAtkStab);
+// Stats for Chart
 
-var theLink = document.getElementById('enemy-link');
-theLink.addEventListener('click', enemyAtkStab);
+function heroToLS() {
+  ourStats = [testHero.swings, testHero.hits, testHero.misses, 11, 45];
+  localStorage.setItem('heroData', JSON.stringify(ourStats));
+}
+
+// Event Handlers
+
+function handleStart(){
+  begin();
+}
+
+function handleBegin(){
+  dispEnemy();
+}
+
+function handleAttack() {
+  heroAtkStab();
+  randomHit();
+  // this calls stab CSS animation
+}
+
+function handleHeal() {
+  heroHeal();
+}
+
+flavor.style.visibility = 'hidden';
+heroButtonsGame.style.visibility = 'hidden';
+
+// Event Listeners
+
+startButton.addEventListener('click', handleStart);
+beginGame.addEventListener('click', handleBegin);
+attack.addEventListener('click', handleAttack);
+heal.addEventListener('click', handleHeal);
