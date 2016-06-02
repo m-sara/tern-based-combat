@@ -1,8 +1,9 @@
 // COMBAT AND INTERACTIVITY APP
 
+// Global Variables
 var users = [];
 var enemies = [];
-var heroLS = []; // used for local storage
+var heroLS = [];
 var level = 0;
 var heroTurn = true;
 var story = document.getElementById('story');
@@ -11,16 +12,14 @@ var startButton = document.getElementById('startbutton');
 var beginGame = document.getElementById('begingame');
 var attack = document.getElementById('heroatk');
 var heal = document.getElementById('heroheal');
-
 var testText = document.getElementById('testtext');
 var testText2 = document.getElementById('testtext2');
 var testText3 = document.getElementById('testtext3');
-
 var heroHP = document.getElementById('herohp');
 var enemyHP = document.getElementById('enemyhp');
-
 var heroButtonsGame = document.getElementById('herobuttonsgame');
 
+// Object Constructors
 function Hero() {
   // var userName = prompt('Tell us your name, Hero!');
   // this.name = userName;
@@ -36,14 +35,17 @@ function Hero() {
   users.push(this);
 }
 
+var testHero = new Hero();
+
 Hero.prototype.calcSwings = function() {
   var totalSwings = (this.hits + this.misses);
   this.swings = totalSwings;
 };
 
-function Enemy(name, hp) {
+function Enemy(name, hp, enemyFlavor) {
   this.name = name;
   this.hitPoints = hp;
+  this.enemyFlavor = enemyFlavor;
   this.idle = 'idle image path';
   this.swing = 'swing image path';
   this.isHit = 'isHit image path';
@@ -51,6 +53,14 @@ function Enemy(name, hp) {
   this.dead = 'dead image path';
   enemies.push(this);
 }
+
+var tern1 = new Enemy('Tern Fonk', 50, 'Oh jeeze Tern Fonk is here!  He is just a low level thug, but the worst kind of low level thug.  Careful at every Tern.');
+var tern2 = new Enemy('Tina Terner', 75, 'What?!  How did Tina Terner get here?  This is not good.  They’re swarming (flocking? I don’t know how this works…).');
+var tern3 = new Enemy('Ternie Sanders', 100, 'Well done!  This isn\'t so bad afte… OH NO LOOK OUT IT\'s Ternie Sanders!');
+var tern4 = new Enemy('The Atterney at Law', 125, 'So the last time I saw Ternie Sanders, The Atterney at Law  was NOT far behind... Yeah ok.  I am out of here.  Yer on your own, kid.');
+var tern5 = new Enemy('The Terninator', 200, '*The Terninator* Your clothes, give them to me.  Now.');
+
+// Functions for Landing Page
 
 function titleScreen() {
   flavor.style.visibility = 'visible';
@@ -60,34 +70,25 @@ function titleScreen() {
 }
 
 function begin() {
-  //maybe (innerHTML = '')
   flavor.style.visibility = 'visible';
-  //========================
   beginGame.style.visibility = 'visible';
   startButton.style.visibility = 'hidden';
-  story.textContent = 'REPLACE WITH ACTUAL STORY CONTENT';
+  story.textContent = '*Narrator* They\'re taking over.  All of the terns.  They\'re everywhere.  It\'s up to you to take them down, one at a time. Hack, slash and heal your way to their leader.  Do you have what it takes to stop all the terns?';
   dispHero();
 }
 
 function dispHero() {
   testText.textContent = 'This Displays the Hero';
-  // display HP
   heroHP.textContent = testHero.hitPoints;
-  // turn on buttons
 }
 
 function dispEnemy(baddie) {
-  console.log(enemies[level]);
+  story.textContent = enemies[level].enemyFlavor;
   testText2.textContent = 'This Displays the Enemy';
   testText3.textContent = enemies[level].name;
   enemyHP.textContent = enemies[level].hitPoints;
   heroButtonsGame.style.visibility = 'visible';
 }
-
-// function combatRound() {
-//   dispHero();
-//   dispEnemy();
-// }
 
 function turnSwap() {
   if (heroTurn === true) {
@@ -112,7 +113,7 @@ function randomHit() {
   }
   turnSwap();
 }
-//
+
 function lifeCheck() {
   if (testHero.hitPoints <= 0) {
     gameOver();
@@ -130,7 +131,6 @@ function hit() {
     lifeCheck();
   } else {
     testText.textContent = 'HIT!';
-    // here is where we change hero hp
     testHero.hitPoints -= 10;
     lifeCheck();
     dispHero();
@@ -188,13 +188,15 @@ function heroHeal() {
 
 titleScreen();
 
-// function updateUserData(user) {
-//   for (var i = 0; i < users.length; i++) {
-//     if (user.name === users[i].name) {
-//
-//     }
-//   }
-// }
+// Stats for Chart
+
+function heroToLS() {
+  ourStats = [testHero.swings, testHero.hits, testHero.misses, 11, 45];
+  localStorage.setItem('heroData', JSON.stringify(ourStats));
+}
+
+// Event Handlers
+
 function handleStart(){
   begin();
 }
@@ -211,23 +213,10 @@ function handleHeal() {
   heroHeal();
 }
 
-// var ourStats = [];
-
-function heroToLS() {
-  ourStats = [testHero.swings, testHero.hits, testHero.misses, 11, 45];
-  // heroLS.push(ourStats);
-  localStorage.setItem('heroData', JSON.stringify(ourStats));
-}
-
-var tern1 = new Enemy('Raoul', 50);
-var tern2 = new Enemy('Vernon', 75);
-var tern3 = new Enemy('Khaleesi', 100);
-var tern4 = new Enemy('Vicious', 125);
-var tern5 = new Enemy('Terninator', 200);
-var testHero = new Hero();
-
 flavor.style.visibility = 'hidden';
 heroButtonsGame.style.visibility = 'hidden';
+
+// Event Listeners
 
 startButton.addEventListener('click', handleStart);
 beginGame.addEventListener('click', handleBegin);
