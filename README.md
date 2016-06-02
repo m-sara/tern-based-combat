@@ -32,3 +32,5 @@ Thursday, June 2
 - 2:10pm JS13: Jed with help from Sam created shake animation for enemy and hero images on hit. Also created color scheme for other pages.  Added shake.css to tie in animations.
 - 2:25pm JS14: Megan added stab CSS animations in style.css and app.js.
 - 3:00pm JS15: Put calls for stab animations into JS. Megan drove, George and Jed navigated.
+- 3:45pm SP1: Jed added enemy info on stats pages, Google fonts link on all pages, banner image asset.
+- 3:45pm CSS7: Megan added Google fonts, background image flavor text area

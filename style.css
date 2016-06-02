@@ -1,13 +1,10 @@
-* {
-  /*border: 1px solid darkgray;*/
-}
-
 body {
   display: flex;
   flex-direction: column;
   width: 70%;
   margin: 0px auto;
   min-width: 400px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 header {
@@ -25,18 +22,19 @@ footer {
 h1 {
   margin: 0px auto;
   align-self: flex-end;
+  font-family: 'Cinzel Decorative', cursive;
 }
 
 h2 {
-
+  font-family: 'Cinzel Decorative', cursive;
 }
 
 h3 {
-
+  font-family: 'Cinzel Decorative', cursive;
 }
 
 p {
-
+  font-family: 'Open Sans', sans-serif;
 }
 
 #nav {
@@ -47,16 +45,28 @@ p {
 
 }
 
-#flavor  {
+#flavorcontainer  {
   margin: 0px auto;
   width: 80%;
   height: 150px;
+  background-image: url('images/scroll.jpg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  /*background-size: contain;*/
+  background-size: cover;
 }
 
 #combat {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-top: 20px;
+  background-image: url('images/stormy_beach_2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  /*background-size: contain;*/
+  background-size: cover;
+  /*background-color: #333333;*/
 }
 
 #hero {
@@ -64,14 +74,12 @@ p {
   display: flex;
   flex-direction: column;
   min-width: 200px;
-  border: 2px solid gray;
 }
 
 #heroimg {
   width: 200px;
   height: 200px;
   align-self: center;
-  border: 1px gray solid;
 }
 
 #herohp {
@@ -82,22 +90,16 @@ p {
 
 }
 
-.atkhealbuttons {
-  flex-direction: row;
-}
-
 #enemy {
   width: 45%;
   display: flex;
   flex-direction: column;
   min-width: 200px;
-  border: 1px solid gray;
 }
 
 #enemyimg {
   width: 200px;
   height: 200px;
-  border: 1px gray solid;
   align-self: center;
 }
 
@@ -121,12 +123,6 @@ p {
 }
 
 .gamepage-main {
-  /*background-image: url('images/stormy_beach_2.jpg');*/
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  /*background-size: contain;*/
-  background-size: cover;
-  /*background-color: #333333;*/
   margin: 0px;
   padding: 0px;
   /*max-height: 630px;*/
@@ -141,6 +137,10 @@ p {
 /*.hp {
 
 }*/
+
+.atkhealbuttons {
+  flex-direction: row;
+}
 
 .herostatsimg {
 
@@ -189,7 +189,6 @@ p {
   width: 200px;
   align-self: center;
 }
-
 
 /* stabbing animations */
 
