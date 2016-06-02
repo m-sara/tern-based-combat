@@ -1,5 +1,5 @@
 * {
-  border: 1px solid darkgray;
+  /*border: 1px solid darkgray;*/
 }
 
 body {
@@ -50,6 +50,7 @@ p {
 #flavor  {
   margin: 0px auto;
   width: 80%;
+  height: 150px;
 }
 
 #combat {
@@ -60,17 +61,17 @@ p {
 
 #hero {
   width: 45%;
-  border: 2px solid red;
   display: flex;
   flex-direction: column;
   min-width: 200px;
+  border: 2px solid gray;
 }
 
 #heroimg {
   width: 200px;
   height: 200px;
-  border: 1px orange solid;
   align-self: center;
+  border: 1px gray solid;
 }
 
 #herohp {
@@ -87,16 +88,16 @@ p {
 
 #enemy {
   width: 45%;
-  border: 2px solid red;
   display: flex;
   flex-direction: column;
   min-width: 200px;
+  border: 1px solid gray;
 }
 
 #enemyimg {
   width: 200px;
   height: 200px;
-  border: 1px orange solid;
+  border: 1px gray solid;
   align-self: center;
 }
 
@@ -117,6 +118,20 @@ p {
 
 #enemyindextext {
 
+}
+
+.gamepage-main {
+  background-image: url('images/stormy_beach_2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  /*background-size: contain;*/
+  background-size: cover;
+  background-color: #333333;
+  margin: 0px;
+  padding: 0px;
+  /*max-height: 630px;*/
+  width: 100%;
+  padding-bottom: 40px
 }
 
 .subhead {
