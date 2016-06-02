@@ -123,9 +123,9 @@ p {
 
 }
 
-.hp {
+/*.hp {
 
-}
+}*/
 
 .herostatsimg {
 
@@ -136,6 +136,7 @@ p {
 
 .enemycontainer {
   width: 50%;
+  margin: 20px;
 }
 
 .enemyindeximg {
@@ -148,6 +149,7 @@ p {
 
 .teamcontainer {
   width: 50%;
+  margin: 20px;
 }
 
 .teammemberimg {
@@ -166,4 +168,9 @@ p {
 .enemyrow {
   display: flex;
   flex-direction: row;
+}
+
+.combatantdisplay {
+  width: 200px;
+  align-self: center;
 }
