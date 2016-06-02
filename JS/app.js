@@ -73,7 +73,7 @@ function begin() {
   flavor.style.visibility = 'visible';
   beginGame.style.visibility = 'visible';
   startButton.style.visibility = 'hidden';
-  story.textContent = '*Narrator* They’re taking over.  All of the terns.  They’re everywhere.  It’s up to you to take them down, one at a time. Hack, slash and heal your way to their leader.  Do you have what it takes to stop all the terns?';
+  story.textContent = '*Narrator* They\'re taking over.  All of the terns.  They\'re everywhere.  It\'s up to you to take them down, one at a time. Hack, slash and heal your way to their leader.  Do you have what it takes to stop all the terns?';
   dispHero();
 }
 
