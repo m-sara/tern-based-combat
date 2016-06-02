@@ -78,13 +78,11 @@ function begin() {
 }
 
 function dispHero() {
-  testText.textContent = 'This Displays the Hero';
   heroHP.textContent = testHero.hitPoints;
 }
 
 function dispEnemy(baddie) {
   story.textContent = enemies[level].enemyFlavor;
-  testText2.textContent = 'This Displays the Enemy';
   testText3.textContent = enemies[level].name;
   enemyHP.textContent = enemies[level].hitPoints;
   heroButtonsGame.style.visibility = 'visible';
@@ -131,10 +129,12 @@ function hit() {
   if (heroTurn) {
     enemies[level].hitPoints -= 20;
     testText2.textContent = 'HIT!';
+    setTimeout(enemyDamageShake, 600);
     lifeCheck();
   } else {
     testText.textContent = 'HIT!';
     testHero.hitPoints -= 10;
+    setTimeout(heroDamageShake, 200);
     lifeCheck();
     dispHero();
   }
@@ -190,6 +190,25 @@ function heroHeal() {
 }
 
 titleScreen();
+
+// Animation functions
+var heroShake = document.getElementById('heroimg');
+function heroDamageShake() {
+  heroShake.className = 'shake-opacity shake-constant';
+  setTimeout(stopHeroShake, 1000);
+}
+function stopHeroShake() {
+  heroShake.className = '';
+}
+
+var enemyShake = document.getElementById('enemyimg');
+function enemyDamageShake() {
+  enemyShake.className = 'shake-opacity shake-constant';
+  setTimeout(stopEnemyShake, 1000);
+}
+function stopEnemyShake() {
+  enemyShake.className = '';
+}
 
 // Stats for Chart
 
