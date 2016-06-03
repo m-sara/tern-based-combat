@@ -7,6 +7,7 @@ var heroLS = [];
 var level = 0;
 var heroTurn = true;
 var heroImg = document.getElementById('heroimg');
+var enemyImg = document.getElementById('enemyimg');
 var story = document.getElementById('story');
 var flavor = document.getElementById('flavor');
 var startButton = document.getElementById('startbutton');
@@ -45,17 +46,16 @@ function Enemy(name, hp, enemyFlavor) {
   this.name = name;
   this.hitPoints = hp;
   this.enemyFlavor = enemyFlavor;
-  this.idle = 'images/' + this.name + '_idle.png';
-  this.swing = 'images/' + this.name + '_attack.png' ;
+  this.idle = 'images/' + this.name + '.png';
   this.dead = 'images/' + this.name + '_dead.png';
   enemies.push(this);
 }
 
-var tern1 = new Enemy('Tern Fonk', 50, 'Oh jeeze Tern Fonk is here! He is just a low level thug, but the worst kind of low level thug. Careful at every Tern.');
-var tern2 = new Enemy('Tina Terner', 75, 'What?! How did Tina Terner get here? This is not good. They\'re swarming (flocking? I don\'t know how this works...).');
-var tern3 = new Enemy('Ternie Sanders', 100, 'Well done! This isn\'t so bad afte... OH NO LOOK OUT IT\'s Ternie Sanders!');
-var tern4 = new Enemy('The Atterney at Law', 125, 'So the last time I saw Ternie Sanders, The Atterney at Law was NOT far behind... Yeah ok. I am out of here. Yer on your own, kid.');
-var tern5 = new Enemy('The Terninator', 200, '*The Terninator* Your clothes, give them to me. Now.');
+var tern1 = new Enemy('fonk', 50, 'Oh jeeze Tern Fonk is here! He is just a low level thug, but the worst kind of low level thug. Careful at every Tern.');
+var tern2 = new Enemy('tina', 75, 'What?! How did Tina Terner get here? This is not good. They\'re swarming (flocking? I don\'t know how this works...).');
+var tern3 = new Enemy('sanders', 100, 'Well done! This isn\'t so bad afte... OH NO LOOK OUT IT\'s Ternie Sanders!');
+var tern4 = new Enemy('atterney', 125, 'So the last time I saw Ternie Sanders, The Atterney at Law was NOT far behind... Yeah ok. I am out of here. Yer on your own, kid.');
+var tern5 = new Enemy('terninator', 200, '*The Terninator* Your clothes, give them to me. Now.');
 
 // Functions for Landing Page
 
@@ -90,6 +90,7 @@ function dispHero() {
 
 function dispEnemy(baddie) {
   story.textContent = enemies[level].enemyFlavor;
+  enemyImg.src = enemies[level].idle;
   testText3.textContent = enemies[level].name;
   enemyHP.textContent = enemies[level].hitPoints;
 }
@@ -128,12 +129,16 @@ function randomHit() {
   turnSwap();
 }
 
+function enemyDead() {
+  enemyImg.src = enemies[level].dead;
+}
+
 function lifeCheck() {
   if (testHero.hitPoints < 1) {
     gameOver();
   } else if (enemies[level].hitPoints < 1 ) {
-    // enemies[level].
-    setTimeout(newRound, 2000);
+    setTimeout(enemyDead, 1500);
+    setTimeout(newRound, 3000);
   } else {
     dispEnemy();
   }
