@@ -45,3 +45,4 @@ Thursday, June 2
 
 Friday, June 3
 - 9:30am JS20: George fixed splash screen path, added HP text, added user input for game page, added game over image to be made a splash screen. Credited Square Enix for music assets
+- 9:45am favicon: Fixed favicon pathing issue.  Removed link to JS in the about page.
