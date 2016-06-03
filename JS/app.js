@@ -23,6 +23,8 @@ var heroButtonsGame = document.getElementById('herobuttonsgame');
 var fade = document.getElementsByClassName('overlay')[0];
 var nav = document.getElementById('nav');
 var heroName = document.getElementById('heroname');
+var endFade = document.getElementsByClassName('endoverlay')[0];
+endFade.style.visibility = 'hidden';
 
 // Object Constructors
 function Hero() {
@@ -114,6 +116,7 @@ function turnSwap() {
     heroTurn = true;
     heroButtonsGame.style.visibility = 'visible';
   }
+  lifeCheck();
 }
 
 function randomHit() {
@@ -184,9 +187,8 @@ function newRound() {
 
 function gameOver() {
   heroButtonsGame.style.visibility = 'hidden';
-  // story.style.visibility = 'visible';
-  // nav.style.visibility = 'visible';
   story.textContent = 'GAME OVER MAN!';
+  endFade.style.visibility = 'visible';
   testHero.calcSwings();
   heroToLS();
 }
