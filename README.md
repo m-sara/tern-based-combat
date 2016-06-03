@@ -36,3 +36,4 @@ Thursday, June 2
 - 3:45pm CSS7: Megan added Google fonts, background image flavor text area
 - 3:50pm JS16: George worked on timing for fight animations
 - 4:30pm JS17: Added audio files to audio dir. also fixed new round so it's the users turn
+- 6:00pm Multiple add: JP added splash screen.  CSS layout beautified by Megan.  Hero button hiding from George. Jed added favicon in html pages and assets folder.
