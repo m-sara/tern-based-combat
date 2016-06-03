@@ -19,7 +19,7 @@ var testText3 = document.getElementById('testtext3');
 var heroHP = document.getElementById('herohp');
 var enemyHP = document.getElementById('enemyhp');
 var heroButtonsGame = document.getElementById('herobuttonsgame');
-
+var fade = document.getElementsByClassName('overlay')[0];
 // Object Constructors
 function Hero() {
   // var userName = prompt('Tell us your name, Hero!');
@@ -255,9 +255,14 @@ function heroToLS() {
 }
 
 // Event Handlers
+function closeNav() {
+  console.log(fade.style.animation);
+  fade.style.animation = 'splash 2s forwards';
+}
 
 function handleStart(){
   begin();
+  closeNav();
 }
 
 function handleBegin(){
