@@ -75,7 +75,7 @@ function begin() {
   flavor.style.visibility = 'visible';
   beginGame.style.visibility = 'visible';
   startButton.style.visibility = 'hidden';
-  story.textContent = 'Welcome to the arctic! You\'ve just picked up your lunch when trouble comes a-squawking. That sandwich in your bag is quite the hero, but you\'re just some guy in a tin can costume. Can you tern the tide against these craven canaries? Defeat all of these birdbrains so you can eat your lunch in peace. -------------------(PRESS ATTACK TO....um ATTACK and HEAL to... well you get the idea.)';
+  story.textContent = 'Welcome to the arctic! You\'ve just picked up your lunch when trouble comes a-squawking. Can you tern the tide against these birdbrains so you can eat your lunch in peace? (PRESS ATTACK TO....um ATTACK and HEAL to... well you get the idea.)';
   dispHero();
 }
 
