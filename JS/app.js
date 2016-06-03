@@ -155,6 +155,8 @@ function clearText() {
 }
 
 function hit() {
+  var audio = new Audio('audio/clank.mp3');
+  audio.play();
   if (heroTurn) {
     enemies[level].hitPoints -= 25;
     testText2.textContent = 'HIT!';
@@ -203,6 +205,8 @@ function victory() {
 }
 
 function miss() {
+  var audio = new Audio('audio/woosh.mp3');
+  audio.play();
   if (heroTurn) {
     testText2.textContent = 'miss';
   } else {
