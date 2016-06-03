@@ -192,6 +192,8 @@ function gameOver() {
 }
 
 function victory() {
+  var audio = new Audio('audio/fanfare.mp3');
+  audio.play();
   heroButtonsGame.style.visibility = 'hidden';
   nav.style.visibility = 'visible';
   story.style.visibility = 'visible';
@@ -278,6 +280,9 @@ function closeNav() {
 }
 
 function handleStart(){
+  var audio = new Audio('audio/prelude.mp3');
+  audio.loop = true;
+  audio.play();
   begin();
   closeNav();
 }
