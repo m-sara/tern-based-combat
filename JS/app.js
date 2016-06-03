@@ -22,14 +22,12 @@ var enemyHP = document.getElementById('enemyhp');
 var heroButtonsGame = document.getElementById('herobuttonsgame');
 var fade = document.getElementsByClassName('overlay')[0];
 var nav = document.getElementById('nav');
-
-nav.style.visibility = 'hidden';
-clearText();
+var heroName = document.getElementById('heroname');
 
 // Object Constructors
 function Hero() {
-  // var userName = prompt('Tell us your name, Hero!');
-  // this.name = userName;
+  var userName = prompt('Tell us your name, Hero!');
+  this.name = userName;
   this.swings = 0;
   this.hits = 0;
   this.misses = 0;
@@ -39,8 +37,6 @@ function Hero() {
   this.dead = 'images/hero_dead.png';
   users.push(this);
 }
-
-var testHero = new Hero();
 
 Hero.prototype.calcSwings = function() {
   var totalSwings = (this.hits + this.misses);
@@ -65,6 +61,7 @@ var tern5 = new Enemy('terninator', 200, 'UH-OH!  Here comes *The Terninator* Yo
 // Functions for Landing Page
 
 function titleScreen() {
+  // var testHero = new Hero();
   flavor.style.visibility = 'visible';
   beginGame.style.visibility = 'hidden';
   startButton.style.visibility = 'visible';
@@ -89,15 +86,16 @@ function heroSwing() {
 }
 
 function dispHero() {
+  heroName.textContent = testHero.name;
   heroImg.src = testHero.idle;
-  heroHP.textContent = testHero.hitPoints;
+  heroHP.textContent = testHero.hitPoints + ' - HP -';
 }
 
 function dispEnemy(baddie) {
   story.textContent = enemies[level].enemyFlavor;
   enemyImg.src = enemies[level].idle;
   testText3.textContent = enemies[level].name;
-  enemyHP.textContent = enemies[level].hitPoints;
+  enemyHP.textContent = enemies[level].hitPoints + ' - HP -';
 }
 
 function turnSwap() {
@@ -186,8 +184,8 @@ function newRound() {
 
 function gameOver() {
   heroButtonsGame.style.visibility = 'hidden';
-  story.style.visibility = 'visible';
-  nav.style.visibility = 'visible';
+  // story.style.visibility = 'visible';
+  // nav.style.visibility = 'visible';
   story.textContent = 'GAME OVER MAN!';
   testHero.calcSwings();
   heroToLS();
@@ -197,7 +195,7 @@ function victory() {
   var audio = new Audio('audio/fanfare.mp3');
   audio.play();
   heroButtonsGame.style.visibility = 'hidden';
-  nav.style.visibility = 'visible';
+  // nav.style.visibility = 'visible';
   story.style.visibility = 'visible';
   story.textContent = 'YOU WON! GREAT JOB! Now enjoy that sandwich pal, you\'ve terned.... um.. EARNED it!';
   testHero.calcSwings();
@@ -226,8 +224,6 @@ function heroHeal() {
     turnSwap();
   }
 }
-
-titleScreen();
 
 // Animation functions
 var heroShake = document.getElementById('heroimg');
@@ -271,7 +267,6 @@ function stopEnemyStab() {
 }
 
 // Stats for Chart
-
 function heroToLS() {
   ourStats = [testHero.swings, testHero.hits, testHero.misses, 11, 45];
   localStorage.setItem('heroData', JSON.stringify(ourStats));
@@ -309,11 +304,14 @@ function handleHeal() {
   heroHeal();
 }
 
+clearText();
+var testHero = new Hero();
+titleScreen();
+
 flavor.style.visibility = 'hidden';
 heroButtonsGame.style.visibility = 'hidden';
 
 // Event Listeners
-
 startButton.addEventListener('click', handleStart);
 beginGame.addEventListener('click', handleBegin);
 attack.addEventListener('click', handleAttack);

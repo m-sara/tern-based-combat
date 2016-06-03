@@ -160,6 +160,14 @@ li a:active {
   flex-direction: row;
 }
 
+#heroname {
+  font-weight: bolder;
+}
+
+.atkhealbuttons {
+  display: inline;
+}
+
 .gamepage-main {
   margin: 0px;
   padding: 0px;
@@ -301,7 +309,7 @@ li a:active {
 	display:table-cell;
 	vertical-align: middle;
 	text-align:center;
-  background:transparent url('/home/jp/codefellows/201/tern based game/pics/scroll.jpg');
+  background:transparent url('images/tern_scroll.png');
   background-repeat: no-repeat;
   background-position: center;
   background-color: grey;
