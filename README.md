@@ -1,6 +1,8 @@
 # tern-based-combat
 A turn based combat browser game - Final Project 201
 
+all music &copy; Square-Enix 2017
+
 Saturday, May 28
 - 2:15 Saturday - Created all of the HTML Skeletons for the 3 pages. Megan Navigated.
 - 2:45pm Saturday - CSS1 branch. Scaffolded style.css page. Jed navigated.
@@ -40,3 +42,6 @@ Thursday, June 2
 - 8:30pm JS18: George completed the enemy images and swaps at home. Also updated stats page with new/funnier enemy text. Combat tested and all animations trigger at the right time.
 - 10:15pm JS19: George got the begin game button hidden and the hit/miss text boxes to clear on a timer. Also updated some more of the flavor text to provide instructions to the user.
 - 11:20pm html3: Jed added game audio.  Removed extraneous files and fixed favicon stuffs.
+
+Friday, June 3
+- 9:30am JS20: George fixed splash screen path, added HP text, added user input for game page, added game over image to be made a splash screen. Credited Square Enix for music assets
