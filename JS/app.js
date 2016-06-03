@@ -92,17 +92,23 @@ function dispEnemy(baddie) {
   story.textContent = enemies[level].enemyFlavor;
   testText3.textContent = enemies[level].name;
   enemyHP.textContent = enemies[level].hitPoints;
-  heroButtonsGame.style.visibility = 'visible';
 }
 
 function turnSwap() {
   console.log('turnswap was called');
   if (heroTurn === true) {
     heroTurn = false;
-    setTimeout(enemyAtkStab, 3000);
-    setTimeout(randomHit, 3500);
+    heroButtonsGame.style.visibility = 'hidden';
+    if (enemies[level].hitPoints < 1) {
+      lifeCheck();
+      heroButtonsGame.style.visibility = 'visible';
+    } else {
+      setTimeout(enemyAtkStab, 3000);
+      setTimeout(randomHit, 3500);
+    }
   } else {
     heroTurn = true;
+    heroButtonsGame.style.visibility = 'visible';
   }
 }
 
@@ -123,10 +129,11 @@ function randomHit() {
 }
 
 function lifeCheck() {
-  if (testHero.hitPoints <= 0) {
+  if (testHero.hitPoints < 1) {
     gameOver();
   } else if (enemies[level].hitPoints < 1 ) {
-    newRound();
+    // enemies[level].
+    setTimeout(newRound, 2000);
   } else {
     dispEnemy();
   }
@@ -137,18 +144,19 @@ function hit() {
     enemies[level].hitPoints -= 20;
     testText2.textContent = 'HIT!';
     setTimeout(enemyDamageShake, 600);
-    lifeCheck();
+    setTimeout(dispEnemy, 650);
   } else {
     testText.textContent = 'HIT!';
     testHero.hitPoints -= 10;
     setTimeout(heroDamageShake, 200);
-    lifeCheck();
-    dispHero();
+    setTimeout(dispEnemy, 250);
+    setTimeout(dispHero, 300);
   }
 }
 
 function newRound() {
   level += 1;
+  heroTurn = true;
   if (level >= 5) {
     victory();
   } else {
@@ -159,17 +167,17 @@ function newRound() {
 }
 
 function gameOver() {
+  heroButtonsGame.style.visibility = 'hidden';
   story.style.visibility = 'visible';
   story.textContent = 'GAME OVER MAN!';
-  heroButtonsGame.style.visibility = 'hidden';
   testHero.calcSwings();
   heroToLS();
 }
 
 function victory() {
+  heroButtonsGame.style.visibility = 'hidden';
   story.style.visibility = 'visible';
   story.textContent = 'You\'re out of Terns!';
-  heroButtonsGame.style.visibility = 'hidden';
   testHero.calcSwings();
   heroToLS();
 }
@@ -254,6 +262,7 @@ function handleStart(){
 
 function handleBegin(){
   dispEnemy();
+  heroButtonsGame.style.visibility = 'visible';
 }
 
 function handleAttack() {

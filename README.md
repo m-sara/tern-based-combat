@@ -35,3 +35,4 @@ Thursday, June 2
 - 3:45pm SP1: Jed added enemy info on stats pages, Google fonts link on all pages, banner image asset.
 - 3:45pm CSS7: Megan added Google fonts, background image flavor text area
 - 3:50pm JS16: George worked on timing for fight animations
+- 4:30pm JS17: Added audio files to audio dir. also fixed new round so it's the users turn
