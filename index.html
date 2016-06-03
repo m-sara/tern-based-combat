@@ -39,41 +39,46 @@
       <main class="gamepage-main">
         <div id="flavorcontainer">
           <div id="flavor">
-            <img id="crest" src="" />
+            <!-- <img id="crest" src="" /> -->
             <p id="story">Test Text</p>
-            <button id="startbutton"></button>
-            <button id="begingame"></button>
+            <!-- <button id="startbutton"></button> -->
+            <button id="begingame">Begin The Game</button>
           </div>
         </div>
 
         <div id="combat">
 
           <div id="hero">
-
             <img src="" id="heroimg" />
-            <p id="testtext" class="combatantdisplay"></p>
-            <p class="combatantdisplay">Our Hero</p>
-            <div class="combatantdisplay">
-              <p id="herohp" class="combatantdisplay"></p>
+            <div class="combatantcontainer">
+              <p class="combatantdisplay">Our Hero</p>
+              <div class="combatantdisplay">
+                <p id="herohp" class="combatantdisplay"></p>
+              </div>
+              <div id="herobuttons" class="combatantdisplay">
+                <ul id="herobuttonsgame" class="atkhealbuttons">
+                  <li><button id="heroatk">ATTACK</button></li>
+                  <li><button id="heroheal">HEAL</button></li>
+                </ul>
+              </div>
             </div>
-            <div id="herobuttons" class="combatantdisplay">
-              <ul id="herobuttonsgame" class="combatantdisplay">
-                <li><button id="heroatk">ATTACK</button></li>
-                <li><button id="heroheal">HEAL</button></li>
-              </ul>
-            </div>
+          </div>
 
+          <div class="hitmisscontainer">
+            <div>
+              <p id="testtext" class="hitmiss">hit</p>
+              <p id="testtext2" class="hitmiss">miss</p>
+            </div>
           </div>
 
           <div id="enemy">
-
             <img src="" id="enemyimg" />
-            <p id="testtext2" class="combatantdisplay"></p>
-            <p id="testtext3" class="combatantdisplay"></p>
-            <div class="combatantdisplay">
-              <p id="enemyhp" class="combatantdisplay"></p>
+            <div class="combatantcontainer">
+              <p id="testtext3" class="combatantdisplay"></p>
+              <div class="combatantdisplay">
+                <p id="enemyhp" class="combatantdisplay"></p>
+              </div>
             </div>
-
           </div>
 
         </div>
