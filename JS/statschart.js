@@ -11,10 +11,10 @@ var heroStatChart = {
   datasets : [
     {
       label : 'Hero Stats',
-      backgroundColor : 'white',
-      borderColor : 'blue',
-      pointBackgroundColor : 'red',
-      pointBorderColor : 'black',
+      backgroundColor : '#AAE0FF',
+      borderColor : '#80888A',
+      pointBackgroundColor : '#DB9E67',
+      pointBorderColor : '#DB9E67',
       data : testHero
     }
   ]

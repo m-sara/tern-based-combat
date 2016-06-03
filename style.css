@@ -5,6 +5,8 @@ body {
   margin: 0px auto;
   min-width: 400px;
   font-family: 'Open Sans', sans-serif;
+  background-color: #1C3659;
+  color: #ffffff;
 }
 
 header {
@@ -17,16 +19,22 @@ main {
 
 footer {
   margin: 0px auto;
+  font-size: 80%;
+  padding: 20px;
 }
 
 h1 {
   margin: 0px auto;
   align-self: flex-end;
   font-family: 'Cinzel Decorative', cursive;
+  color: #DB9E67;
+  font-size: 350%;
+  margin: 20px 0px 0px 0px;
 }
 
 h2 {
   font-family: 'Cinzel Decorative', cursive;
+  font-size: 200%;
 }
 
 h3 {
@@ -37,8 +45,40 @@ p {
   font-family: 'Open Sans', sans-serif;
 }
 
+canvas {
+  background-color: #ffffff;
+  border-radius: 4px;
+  margin: 0px 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+li a:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+li a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: #DB9E67;
+  text-decoration: underline;
+}
+
+li a:active {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 #nav {
   align-self: flex-end;
+  font-size: 80%;
+  width: 200px;
 }
 
 #flavortext {
@@ -47,14 +87,18 @@ p {
 
 #flavorcontainer  {
   margin: 0px auto;
-  width: 80%;
+  width: 100%;
   height: 150px;
-  background-image: url('images/scroll.jpg');
+  background-image: url('images/scroll.png');
   background-repeat: no-repeat;
   background-attachment: scroll;
   /*background-size: contain;*/
   background-size: cover;
 }
+
+/*#flavorcontainer>img {
+  height: 100px;
+}*/
 
 #combat {
   display: flex;
@@ -80,6 +124,7 @@ p {
   width: 200px;
   height: 200px;
   align-self: center;
+  border-radius: 4px;
 }
 
 #herohp {
@@ -101,6 +146,7 @@ p {
   width: 200px;
   height: 200px;
   align-self: center;
+  border-radius: 4px;
 }
 
 #enemyhp {
@@ -111,7 +157,8 @@ p {
 }
 
 #herostats {
-
+  display: flex;
+  flex-direction: row;
 }
 
 #statschart {
@@ -123,17 +170,23 @@ p {
 }
 
 .gamepage-main {
-  background-image: url('images/stormy_beach_2.jpg');
+  /*background-image: url('images/stormy_beach_2.jpg');
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: scroll;*/
   /*background-size: contain;*/
-  background-size: cover;
+  /*background-size: cover;*/
   /*background-color: #333333;*/
   margin: 0px;
   padding: 0px;
   /*max-height: 630px;*/
   width: 100%;
   padding-bottom: 40px
+}
+
+.mainpages {
+  /*background-color: #3D6499;*/
+  background-color: #244673;
+  padding: 30px;
 }
 
 .subhead {
@@ -149,7 +202,10 @@ p {
 }
 
 .herostatsimg {
-
+  width: 200px;
+  height: 200px;
+  margin-right: 20px;
+  border-radius: 4px;
 }
 
 .enemyindex {
@@ -160,8 +216,19 @@ p {
   margin: 20px;
 }
 
-.enemyindeximg {
+.enemybosscontainer {
+  width: 40%;
+  margin: 20px;
+}
 
+.enemyindeximg {
+  width: 160px;
+  border-radius: 4px;
+}
+
+.enemybossindeximg {
+  width: 240px;
+  border-radius: 4px;
 }
 
 .aboutteam {
@@ -175,6 +242,7 @@ p {
 
 .teammemberimg {
   width: 200px;
+  border-radius: 4px;
 }
 
 .teammembertext {
