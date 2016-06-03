@@ -21,6 +21,11 @@ var heroHP = document.getElementById('herohp');
 var enemyHP = document.getElementById('enemyhp');
 var heroButtonsGame = document.getElementById('herobuttonsgame');
 var fade = document.getElementsByClassName('overlay')[0];
+var nav = document.getElementById('nav');
+
+nav.style.visibility = 'hidden';
+clearText();
+
 // Object Constructors
 function Hero() {
   // var userName = prompt('Tell us your name, Hero!');
@@ -51,11 +56,11 @@ function Enemy(name, hp, enemyFlavor) {
   enemies.push(this);
 }
 
-var tern1 = new Enemy('fonk', 50, 'Oh jeeze Tern Fonk is here! He is just a low level thug, but the worst kind of low level thug. Careful at every Tern.');
-var tern2 = new Enemy('tina', 75, 'What?! How did Tina Terner get here? This is not good. They\'re swarming (flocking? I don\'t know how this works...).');
-var tern3 = new Enemy('sanders', 100, 'Well done! This isn\'t so bad afte... OH NO LOOK OUT IT\'s Ternie Sanders!');
-var tern4 = new Enemy('atterney', 125, 'So the last time I saw Ternie Sanders, The Atterney at Law was NOT far behind... Yeah ok. I am out of here. Yer on your own, kid.');
-var tern5 = new Enemy('terninator', 200, '*The Terninator* Your clothes, give them to me. Now.');
+var tern1 = new Enemy('fonk', 50, 'Oh jeeze Tern Fonk is here! Local celebrities always tern up in places like this. Hope you have insurance!');
+var tern2 = new Enemy('tina', 75, 'What?! How did Tina Terner get here? I suppose one bad tern deserves another!');
+var tern3 = new Enemy('sanders', 100, 'Job well done! This isn\'t so bad afte... OH NO LOOK OUT IT\'s Ternie Sanders! Here to tern democracy on it\'s head!');
+var tern4 = new Enemy('atterney', 125, 'So the last time I saw Ternie Sanders, The Atterney at Law was NOT far behind. I would brief you on him, but you would object to his sustained attacks regardless. Looks like there is danger no matter where you tern!');
+var tern5 = new Enemy('terninator', 200, 'UH-OH!  Here comes *The Terninator* Your clothes, give them to me. Now.');
 
 // Functions for Landing Page
 
@@ -70,7 +75,7 @@ function begin() {
   flavor.style.visibility = 'visible';
   beginGame.style.visibility = 'visible';
   startButton.style.visibility = 'hidden';
-  story.textContent = '*Narrator* They\'re taking over. All of the terns. They\'re everywhere. It\'s up to you to take them down, one at a time. Hack, slash and heal your way to their leader. Do you have what it takes to stop all the terns?';
+  story.textContent = 'Welcome to the arctic! You\'ve just picked up your lunch when trouble comes a-squawking. That sandwich in your bag is quite the hero, but you\'re just some guy in a tin can costume. Can you tern the tide against these craven canaries? Defeat all of these birdbrains so you can eat your lunch in peace. -------------------(PRESS ATTACK TO....um ATTACK and HEAL to... well you get the idea.)';
   dispHero();
 }
 
@@ -116,7 +121,7 @@ function turnSwap() {
 function randomHit() {
   var hitStatus = false;
   var hitChance = Math.random();
-  if (hitChance >= .45) {
+  if (hitChance >= .55) {
     hitStatus = true;
     testHero.hits += 1;
   }
@@ -144,19 +149,25 @@ function lifeCheck() {
   }
 }
 
+function clearText() {
+  testText2.textContent = '';
+  testText.textContent = '';
+}
+
 function hit() {
   if (heroTurn) {
-    enemies[level].hitPoints -= 20;
+    enemies[level].hitPoints -= 25;
     testText2.textContent = 'HIT!';
     setTimeout(enemyDamageShake, 600);
     setTimeout(dispEnemy, 650);
   } else {
     testText.textContent = 'HIT!';
-    testHero.hitPoints -= 10;
+    testHero.hitPoints -= 12;
     setTimeout(heroDamageShake, 200);
     setTimeout(dispEnemy, 250);
     setTimeout(dispHero, 300);
   }
+  setTimeout(clearText, 2000);
 }
 
 function newRound() {
@@ -174,6 +185,7 @@ function newRound() {
 function gameOver() {
   heroButtonsGame.style.visibility = 'hidden';
   story.style.visibility = 'visible';
+  nav.style.visibility = 'visible';
   story.textContent = 'GAME OVER MAN!';
   testHero.calcSwings();
   heroToLS();
@@ -181,8 +193,9 @@ function gameOver() {
 
 function victory() {
   heroButtonsGame.style.visibility = 'hidden';
+  nav.style.visibility = 'visible';
   story.style.visibility = 'visible';
-  story.textContent = 'You\'re out of Terns!';
+  story.textContent = 'YOU WON! GREAT JOB! Now enjoy that sandwich pal, you\'ve terned.... um.. EARNED it!';
   testHero.calcSwings();
   heroToLS();
 }
@@ -193,19 +206,18 @@ function miss() {
   } else {
     testText.textContent = 'miss';
   }
+  setTimeout(clearText, 2000);
 }
 
 function heroHeal() {
   if(testHero.hitPoints === 100){
     testHero.hitPoints += 0;
     turnSwap();
-    randomHit();
   } else {
-    testHero.hitPoints += 10;
+    testHero.hitPoints += 15;
     heroHP.textContent = testHero.hitPoints;
     dispHero();
     turnSwap();
-    randomHit();
   }
 }
 
@@ -271,6 +283,7 @@ function handleStart(){
 }
 
 function handleBegin(){
+  beginGame.style.visibility = 'hidden';
   dispEnemy();
   heroButtonsGame.style.visibility = 'visible';
 }
