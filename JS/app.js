@@ -3,7 +3,7 @@
 // Global Variables
 var users = [];
 var enemies = [];
-var heroLS = [];
+// var heroLS = [];
 var level = 0;
 var heroTurn = true;
 var heroImg = document.getElementById('heroimg');
@@ -21,10 +21,10 @@ var heroHP = document.getElementById('herohp');
 var enemyHP = document.getElementById('enemyhp');
 var heroButtonsGame = document.getElementById('herobuttonsgame');
 var fade = document.getElementsByClassName('overlay')[0];
-var nav = document.getElementById('nav');
+// var nav = document.getElementById('nav');
 var heroName = document.getElementById('heroname');
 var endFade = document.getElementsByClassName('endoverlay')[0];
-endFade.style.visibility = 'hidden';
+// endFade.style.visibility = 'hidden';
 
 // Object Constructors
 function Hero() {
@@ -54,6 +54,42 @@ function Enemy(name, hp, enemyFlavor) {
   enemies.push(this);
 }
 
+function Bio (obj) {
+  this.name = obj.name;
+  this.imgSource = obj.imgSource;
+  this.bio = obj.bio;
+}
+
+Bio.allBios = [];
+
+Bio.prototype.toHtml = function() {
+  var htmlTemp = $('#template').html(); //#template refers to the ID of the Handlebars script tag right above the HTML template
+  var temp = Handlebars.compile(htmlTemp); //Handlebars.compile returns a function, so we store it in a variable, pass 'this' into it (next line), and return it.
+  return temp(this);
+};
+
+Bio.loadAll = function(bios) {
+  bios.forEach(function(ele) {
+    Bio.allBios.push(new Bio(ele));
+  });
+};
+
+Bio.fetchAll = function() {
+  if (localStorage.aboutUs) {
+    var lsBio = JSON.parse(localStorage.getItem('aboutUs'));
+    Bio.loadAll(lsBio);
+  } else {
+    $.getJSON('../data/aboutUs.json').then(
+      function(bioData) {
+        localStorage.setItem('aboutUs', JSON.stringify(bioData));
+        Bio.loadAll(bioData);
+      }
+    );
+  }
+};
+
+Bio.fetchAll();
+
 var tern1 = new Enemy('fonk', 50, 'Oh jeeze Tern Fonk is here! Local celebrities always tern up in places like this. Hope you have insurance!');
 var tern2 = new Enemy('tina', 75, 'What?! How did Tina Terner get here? I suppose one bad tern deserves another!');
 var tern3 = new Enemy('sanders', 100, 'Job well done! This isn\'t so bad afte... OH NO LOOK OUT IT\'s Ternie Sanders! Here to tern democracy on it\'s head!');
@@ -63,7 +99,6 @@ var tern5 = new Enemy('terninator', 200, 'UH-OH!  Here comes *The Terninator* Yo
 // Functions for Landing Page
 
 function titleScreen() {
-  // var testHero = new Hero();
   flavor.style.visibility = 'visible';
   beginGame.style.visibility = 'hidden';
   startButton.style.visibility = 'visible';
@@ -197,7 +232,6 @@ function victory() {
   var audio = new Audio('audio/fanfare.mp3');
   audio.play();
   heroButtonsGame.style.visibility = 'hidden';
-  // nav.style.visibility = 'visible';
   story.style.visibility = 'visible';
   story.textContent = 'YOU WON! GREAT JOB! Now enjoy that sandwich pal, you\'ve terned.... um.. EARNED it!';
   testHero.calcSwings();
