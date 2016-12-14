@@ -109,8 +109,8 @@ function turnSwap() {
       lifeCheck();
       heroButtonsGame.style.visibility = 'visible';
     } else {
-      setTimeout(enemyAtkStab, 3000);
-      setTimeout(randomHit, 3500);
+      setTimeout(enemyAtkStab, 1500);
+      setTimeout(randomHit, 1750);
     }
   } else {
     heroTurn = true;
@@ -143,8 +143,8 @@ function lifeCheck() {
   if (testHero.hitPoints < 1) {
     gameOver();
   } else if (enemies[level].hitPoints < 1 ) {
-    setTimeout(enemyDead, 1500);
-    setTimeout(newRound, 3000);
+    setTimeout(enemyDead, 750);
+    setTimeout(newRound, 1500);
   } else {
     dispEnemy();
   }
@@ -161,16 +161,16 @@ function hit() {
   if (heroTurn) {
     enemies[level].hitPoints -= 25;
     testText2.textContent = 'HIT!';
-    setTimeout(enemyDamageShake, 600);
-    setTimeout(dispEnemy, 650);
+    setTimeout(enemyDamageShake, 300);
+    setTimeout(dispEnemy, 325);
   } else {
     testText.textContent = 'HIT!';
     testHero.hitPoints -= 12;
-    setTimeout(heroDamageShake, 200);
-    setTimeout(dispEnemy, 250);
-    setTimeout(dispHero, 300);
+    setTimeout(heroDamageShake, 100);
+    setTimeout(dispEnemy, 125);
+    setTimeout(dispHero, 150);
   }
-  setTimeout(clearText, 2000);
+  setTimeout(clearText, 1000);
 }
 
 function newRound() {
@@ -212,7 +212,7 @@ function miss() {
   } else {
     testText.textContent = 'miss';
   }
-  setTimeout(clearText, 2000);
+  setTimeout(clearText, 1500);
 }
 
 function heroHeal() {
@@ -231,7 +231,7 @@ function heroHeal() {
 var heroShake = document.getElementById('heroimg');
 function heroDamageShake() {
   heroShake.className = 'shake-opacity shake-constant';
-  setTimeout(stopHeroShake, 1000);
+  setTimeout(stopHeroShake, 500);
 }
 function stopHeroShake() {
   heroShake.className = '';
@@ -240,7 +240,7 @@ function stopHeroShake() {
 var enemyShake = document.getElementById('enemyimg');
 function enemyDamageShake() {
   enemyShake.className = 'shake-opacity shake-constant';
-  setTimeout(stopEnemyShake, 1000);
+  setTimeout(stopEnemyShake, 500);
 }
 function stopEnemyShake() {
   enemyShake.className = '';
@@ -257,7 +257,7 @@ function heroAtkStab() {
 
 function enemyAtkStab() {
   enemyStab.className = 'enemystabby';
-  setTimeout(stopEnemyStab, 600);
+  setTimeout(stopEnemyStab, 300);
 }
 
 function stopHeroStab() {
@@ -277,7 +277,7 @@ function heroToLS() {
 // Event Handlers
 function closeNav() {
   console.log(fade.style.animation);
-  fade.style.animation = 'splash 2s forwards';
+  fade.style.animation = 'splash 1s forwards';
 }
 
 function handleStart(){
@@ -298,7 +298,7 @@ function handleAttack() {
   heroSwing();
   heroAtkStab();
   randomHit();
-  setTimeout(dispHero, 2000);
+  setTimeout(dispHero, 1000);
   // this calls stab CSS animation
 }
 

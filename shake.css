@@ -135,7 +135,7 @@
 .shake-trigger:hover .shake,
 .shake.shake-freeze,
 .shake.shake-constant {
-  animation: shake 100ms ease-in-out infinite; }
+  animation: shake 10ms ease-in-out infinite; }
 
 @keyframes shake-little {
   2% {
@@ -243,7 +243,7 @@
 .shake-trigger:hover .shake-little,
 .shake-little.shake-freeze,
 .shake-little.shake-constant {
-  animation: shake-little 100ms ease-in-out infinite; }
+  animation: shake-little 10ms ease-in-out infinite; }
 
 @keyframes shake-slow {
   2% {
@@ -459,7 +459,7 @@
 .shake-trigger:hover .shake-hard,
 .shake-hard.shake-freeze,
 .shake-hard.shake-constant {
-  animation: shake-hard 100ms ease-in-out infinite; }
+  animation: shake-hard 10ms ease-in-out infinite; }
 
 @keyframes shake-horizontal {
   2% {
@@ -567,7 +567,7 @@
 .shake-trigger:hover .shake-horizontal,
 .shake-horizontal.shake-freeze,
 .shake-horizontal.shake-constant {
-  animation: shake-horizontal 100ms ease-in-out infinite; }
+  animation: shake-horizontal 10ms ease-in-out infinite; }
 
 @keyframes shake-vertical {
   2% {
@@ -675,7 +675,7 @@
 .shake-trigger:hover .shake-vertical,
 .shake-vertical.shake-freeze,
 .shake-vertical.shake-constant {
-  animation: shake-vertical 100ms ease-in-out infinite; }
+  animation: shake-vertical 10ms ease-in-out infinite; }
 
 @keyframes shake-rotate {
   2% {
@@ -783,7 +783,7 @@
 .shake-trigger:hover .shake-rotate,
 .shake-rotate.shake-freeze,
 .shake-rotate.shake-constant {
-  animation: shake-rotate 100ms ease-in-out infinite; }
+  animation: shake-rotate 10ms ease-in-out infinite; }
 
 @keyframes shake-opacity {
   10% {
@@ -857,7 +857,7 @@
 .shake-trigger:hover .shake-crazy,
 .shake-crazy.shake-freeze,
 .shake-crazy.shake-constant {
-  animation: shake-crazy 100ms ease-in-out infinite; }
+  animation: shake-crazy 10ms ease-in-out infinite; }
 
 @keyframes shake-chunk {
   2% {
@@ -915,7 +915,7 @@
         /*$r: 3deg, /* {Number} is the max number for random rotation */*/
         /*$dur: 500ms, /* {Number} is the animation-duration time value */*/
         /*$precision: .02, /* {Number} is the precision of the keyframes animation. For example .02 generates keyframes each 2% and .1 each 10%. The calculation is $step: 100 * $precision; */*/
-        /*$opacity: false, */*/
+        /*$opacity: false, */
         /*$q: infinite, /* {String} is the animation-iteration-count value */*/
         /*$t: ease-in-out, /* {String} animation-timing-function value */*/
         /*$delay: null, /* {Number} animation-delay time value */*/

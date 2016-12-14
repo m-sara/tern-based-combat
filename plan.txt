@@ -7,7 +7,7 @@ GENERAL:
 APP.JS:
 -encapsulate functions + IIFE
 -jquery
--speed up animations
+X speed up animations
 -keep buttons from disappearing
 -get rid of alert box!!!!
 -remove one press play/begin game button
