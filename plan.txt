@@ -1,0 +1,22 @@
+GENERAL:
+-styling
+-put files in folders (modularize)
+-consolidate HTML files? (event handling)
+-camelcase
+
+APP.JS:
+-encapsulate functions + IIFE
+-jquery
+X speed up animations
+-keep buttons from disappearing
+-get rid of alert box!!!!
+-remove one press play/begin game button
+
+ABOUT.HTML:
+-add handlebars
+-put divs in table?
+
+STATSCHART.JS:
+-make sense of chart/change chart
+-add chart legend + explanation
+-add stats/levels for enemies
