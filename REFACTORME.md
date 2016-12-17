@@ -1,0 +1,11 @@
+Kaylee and Maithrika worked on refactoring this project.
+
+Our initial action was to go through each part of the site and make a list of all the things that we wanted to change, saved in the project folder as plan.txt. As Kaylee said in class, this may have proved somewhat overwhelming as we now had a totally unrealistic list that we had minimal time to start on. I think for my part, I underestimated the time that each task would take, as I didn't take into account very well the fact that reading someone else's code is infinitely more confusing than reading your own.
+
+Adding onto this, I think it would have helped us a lot if we had taken some time right away to look through each part of the project code and understand what exactly was happening within it. There were some areas where I had no idea where variables were coming from or what certain arbitrary numbers were being used to represent (also a reason comments are awesome), so it was really hard for me to figure out how I could change it.
+
+As for the list we made, our plan was to each tackle one thing: Kaylee took implementing Handlebars and I took encapsulating the functions in app.js. One of the issues I had was that I wasn't exactly sure how the right way to translate all the functions would be -- as there seemed to be multiple different formats in which functions were written, and there were certain variables for which the source was very difficult to find. Another issue I had is that function calls were being thrown all over the place, so every time I tried to change something there was another thing I had missed that would inevitably get in the way. I tried and deleted many, many things.
+
+With Handlebars, I think Kaylee got pretty dang close to implementing successfully.
+
+To recap, I think the next time we look at someone else's code, it would really help to look through all of it first so you understand at least the basics of what they were doing -- maybe even drawing a diagram or something of how logic is flowing. I also think the list was somewhat of a waste of time -- a better approach might be to pick two glaring parts that need changes and just work on those instead of trying to tackle the whole project at once.
